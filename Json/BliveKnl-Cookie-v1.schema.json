@@ -1,0 +1,77 @@
+{
+  "$id": "https://cdn.jsdelivr.net/gh/SantaQuiz/Schema/Json/BliveKnl-Cookie-v1.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "Schema for storing Bilibili authentication cookies in a local Jar application.",
+  "properties": {
+    "$schema": {
+      "const": "https://cdn.jsdelivr.net/gh/SantaQuiz/Schema/Json/BliveKnl-Cookie-v1.schema.json",
+      "description": "Reference to this schema.",
+      "type": "string"
+    },
+    "cookies": {
+      "description": "List of stored cookies.",
+      "items": {
+        "properties": {
+          "domain": {
+            "description": "The domain that the cookie is associated with.",
+            "type": "string"
+          },
+          "expiresAt": {
+            "description": "Expiration timestamp in milliseconds. Use 0 or negative for session cookies.",
+            "type": "integer"
+          },
+          "hostOnly": {
+            "description": "Indicates if the cookie is host-only.",
+            "type": "boolean"
+          },
+          "httpOnly": {
+            "description": "Indicates if the cookie is inaccessible to non-HTTP APIs.",
+            "type": "boolean"
+          },
+          "name": {
+            "description": "The name of the cookie.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "path": {
+            "description": "The path that the cookie is associated with. Must start with a forward slash.",
+            "pattern": "^/",
+            "type": "string"
+          },
+          "sameSite": {
+            "description": "SameSite attribute represented as an integer (0=None, 1=Lax, 2=Strict).",
+            "maximum": 2,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "secure": {
+            "description": "Indicates if the cookie requires a secure connection.",
+            "type": "boolean"
+          },
+          "value": {
+            "description": "The value of the cookie.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "value",
+          "domain",
+          "path",
+          "expiresAt",
+          "hostOnly",
+          "secure",
+          "httpOnly",
+          "sameSite"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "cookies"
+  ],
+  "title": "BliveKnl Cookie Storage",
+  "type": "object"
+}

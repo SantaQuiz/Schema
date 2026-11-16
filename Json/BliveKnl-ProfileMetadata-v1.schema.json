@@ -1,0 +1,36 @@
+{
+  "$id": "https://cdn.jsdelivr.net/gh/SantaQuiz/Schema/Json/BliveKnl-ProfileMetadata-v1.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "BliveKnl profile metadata and runtime instance bindings.",
+  "properties": {
+    "$schema": {
+      "const": "https://cdn.jsdelivr.net/gh/SantaQuiz/Schema/Json/BliveKnl-ProfileMetadata-v1.schema.json",
+      "description": "Reference to this schema.",
+      "type": "string"
+    },
+    "activeProfile": {
+      "additionalProperties": {
+        "description": "Dynamic instance bindings (instance_id mapped to profile_id or null).",
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "properties": {
+        "default": {
+          "description": "The default profile ID to load, or null if none.",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "type": "object"
+    }
+  },
+  "required": [
+    "activeProfile"
+  ],
+  "title": "BliveKnl Profile Metadata",
+  "type": "object"
+}
