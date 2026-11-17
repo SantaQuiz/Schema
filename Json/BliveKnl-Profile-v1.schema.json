@@ -8,10 +8,8 @@
       "type": "string"
     },
     "userInfo": {
+      "description": "Guest state is the empty object {}; null is not allowed. A populated value must be a complete user object.",
       "anyOf": [
-        {
-          "type": "null"
-        },
         {
           "type": "object",
           "maxProperties": 0
@@ -51,6 +49,7 @@
           "type": "string"
         },
         "updatedAt": {
+          "description": "Last update time as an ISO 8601 date-time string (the only human-readable time field; all others are Unix seconds).",
           "format": "date-time",
           "type": "string"
         }

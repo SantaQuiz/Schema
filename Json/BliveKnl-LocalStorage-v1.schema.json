@@ -10,8 +10,8 @@
     },
     "localStorage": {
       "additionalProperties": {
-        "description": "Must follow [Type(,Param);Payload] with a non-empty Payload. E.g., string;abc, integer;0xFF, float;3.14, base64,0x400;SGVsbG8=",
-        "pattern": "^(?:string;|integer(?:,(?:dec|oct|hex|bin))?;|float;|base64,(?:0[xX][0-9a-fA-F]+|0[bB][01]+|\\d+);).+$",
+        "description": "Must follow [Type(,Param);Payload] with a non-empty Payload. E.g., string;abc, integer;0xFF, float;3.14, boolean;true, base64,0x400;SGVsbG8=. A boolean Payload accepts true/false, yes/no, on/off and 1/0, case-insensitively (PHP FILTER_VALIDATE_BOOLEAN compatible); boolean; with an empty Payload is not allowed.",
+        "pattern": "^(?:string;.+|integer(?:,(?:dec|oct|hex|bin))?;.+|float;.+|boolean;(?:[Tt][Rr][Uu][Ee]|[Ff][Aa][Ll][Ss][Ee]|[Yy][Ee][Ss]|[Nn][Oo]|[Oo][Nn]|[Oo][Ff][Ff]|1|0)|base64,(?:0[xX][0-9a-fA-F]+|0[bB][01]+|\\d+);.+)$",
         "type": "string"
       },
       "description": "All local storage key-value pairs.",

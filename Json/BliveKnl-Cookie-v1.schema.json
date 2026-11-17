@@ -17,7 +17,8 @@
             "type": "string"
           },
           "expiresAt": {
-            "description": "Expiration timestamp in milliseconds. Use 0 or negative for session cookies.",
+            "description": "Expiration time as Unix seconds since 1970-01-01T00:00:00Z. 0 means a session cookie.",
+            "minimum": 0,
             "type": "integer"
           },
           "hostOnly": {
