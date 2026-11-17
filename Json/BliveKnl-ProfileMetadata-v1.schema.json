@@ -1,10 +1,10 @@
 {
-  "$id": "https://cdn.jsdelivr.net/gh/SantaQuiz/Schema/Json/BliveKnl-ProfileMetadata-v1.schema.json",
+  "$id": "https://cdn.jsdelivr.net/gh/SantaQuiz/Schema@v0.1.4/Json/BliveKnl-ProfileMetadata-v1.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "description": "BliveKnl profile metadata and runtime instance bindings.",
   "properties": {
     "$schema": {
-      "const": "https://cdn.jsdelivr.net/gh/SantaQuiz/Schema/Json/BliveKnl-ProfileMetadata-v1.schema.json",
+      "const": "https://cdn.jsdelivr.net/gh/SantaQuiz/Schema@v0.1.4/Json/BliveKnl-ProfileMetadata-v1.schema.json",
       "description": "Reference to this schema.",
       "type": "string"
     },
